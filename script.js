@@ -60,19 +60,19 @@ function createDivsForColors(colorArray) {
 let clicks = 0;
 let turn = 1;
 let lastClick = 0
+const game = document.querySelector('#game');
 
-// TODO: Implement this function!
 function handleCardClick(event) {
-  // you can use event.target to see which element was clicked
+  clicks ++;
+  document.querySelector('#clicks').innerText = clicks;
   if (event.target.className === 'red' && turn === 1){
     event.target.className = "redC";
-    clicks ++;
     turn = 2;
     lastClick = 'red';
-    document.querySelector('#clicks').innerText = clicks;
     }
   if (event.target.className === 'red' && (turn === 2 && lastClick !== 'red')){
     event.target.className = 'redC';
+    game.className = 'pause';
     setTimeout(function(){
       let oopsR = document.getElementsByClassName('redC');
       for (let i = 0; i < oopsR.length; i++){
@@ -94,9 +94,8 @@ function handleCardClick(event) {
       for (let i = 0; i < oopsP.length; i++){
         oopsP[i].className = 'purple';
       }
-      clicks ++
-      turn = 1
-      document.querySelector('#clicks').innerText = clicks;}, 1000);
+      game.className = 'none';
+      turn = 1}, 1000);
   }
   if (event.target.className === 'red' && (turn === 2 && lastClick === 'red')){
     event.target.className = "redD";
@@ -104,19 +103,16 @@ function handleCardClick(event) {
     for (let i = 0; i < yay.length; i++){
       yay[i].className = 'redD';
     }
-    clicks ++;
     turn = 1;
-    document.querySelector('#clicks').innerText = clicks;
   }
   if (event.target.className === 'blue' && turn === 1){
     event.target.className = "blueC";
-    clicks ++;
     turn = 2;
     lastClick = 'blue';
-    document.querySelector('#clicks').innerText = clicks;
     }
   if (event.target.className === 'blue' && (turn === 2 && lastClick !== 'blue')){
     event.target.className = "blueC";
+    game.className = 'pause';
     setTimeout(function(){
       let oopsR = document.getElementsByClassName('redC');
       for (let i = 0; i < oopsR.length; i++){
@@ -138,9 +134,8 @@ function handleCardClick(event) {
       for (let i = 0; i < oopsP.length; i++){
         oopsP[i].className = 'purple';
       }
-      clicks ++
-      turn = 1
-      document.querySelector('#clicks').innerText = clicks;}, 1000);
+      game.className = 'none';
+      turn = 1}, 1000);
   }
   if (event.target.className === 'blue' && (turn === 2 && lastClick === 'blue')){
     event.target.className = "blueD";
@@ -148,19 +143,16 @@ function handleCardClick(event) {
     for (let i = 0; i < yay.length; i++){
       yay[i].className = 'blueD';
     }
-    clicks ++;
     turn = 1;
-    document.querySelector('#clicks').innerText = clicks;
   }
   if (event.target.className === 'green' && turn === 1){
     event.target.className = "greenC";
-    clicks ++;
     turn = 2;
     lastClick = 'green';
-    document.querySelector('#clicks').innerText = clicks;
     }
   if (event.target.className === 'green' && (turn === 2 && lastClick !== 'green')){
     event.target.className = "greenC";
+    game.className = 'pause';
     setTimeout(function(){
       let oopsR = document.getElementsByClassName('redC');
       for (let i = 0; i < oopsR.length; i++){
@@ -182,9 +174,8 @@ function handleCardClick(event) {
       for (let i = 0; i < oopsP.length; i++){
         oopsP[i].className = 'purple';
       }
-      clicks ++
-      turn = 1
-      document.querySelector('#clicks').innerText = clicks;}, 1000);
+      game.className = 'none';
+      turn = 1}, 1000);
   }
   if (event.target.className === 'green' && (turn === 2 && lastClick === 'green')){
     event.target.className = "greenD";
@@ -192,19 +183,16 @@ function handleCardClick(event) {
     for (let i = 0; i < yay.length; i++){
       yay[i].className = 'greenD';
     }
-    clicks ++;
     turn = 1;
-    document.querySelector('#clicks').innerText = clicks;
   }
   if (event.target.className === 'orange' && turn === 1){
     event.target.className = "orangeC";
-    clicks ++;
     turn = 2;
     lastClick = 'orange';
-    document.querySelector('#clicks').innerText = clicks;
     }
   if (event.target.className === 'orange' && (turn === 2 && lastClick !== 'orange')){
     event.target.className = "orangeC";
+    game.className = 'pause';
     setTimeout(function(){
       let oopsR = document.getElementsByClassName('redC');
       for (let i = 0; i < oopsR.length; i++){
@@ -226,9 +214,8 @@ function handleCardClick(event) {
       for (let i = 0; i < oopsP.length; i++){
         oopsP[i].className = 'purple';
       }
-      clicks ++
-      turn = 1
-      document.querySelector('#clicks').innerText = clicks;}, 1000);
+      game.className = 'none';
+      turn = 1}, 1000);
   }
   if (event.target.className === 'orange' && (turn === 2 && lastClick === 'orange')){
     event.target.className = "orangeD";
@@ -236,19 +223,16 @@ function handleCardClick(event) {
     for (let i = 0; i < yay.length; i++){
       yay[i].className = 'orangeD';
     }
-    clicks ++;
     turn = 1;
-    document.querySelector('#clicks').innerText = clicks;
   }
   if (event.target.className === 'purple' && turn === 1){
     event.target.className = "purpleC";
-    clicks ++;
     turn = 2;
     lastClick = 'purple';
-    document.querySelector('#clicks').innerText = clicks;
     }
   if (event.target.className === 'purple' && (turn === 2 && lastClick !== 'purple')){
     event.target.className = "purpleC";
+    game.className = 'pause';
     setTimeout(function(){
       let oopsR = document.getElementsByClassName('redC');
       for (let i = 0; i < oopsR.length; i++){
@@ -270,9 +254,8 @@ function handleCardClick(event) {
       for (let i = 0; i < oopsP.length; i++){
         oopsP[i].className = 'purple';
       }
-      clicks ++
-      turn = 1
-      document.querySelector('#clicks').innerText = clicks;}, 1000);
+      game.className = 'none';
+      turn = 1;}, 1000);
   }
   if (event.target.className === 'purple' && (turn === 2 && lastClick === 'purple')){
     event.target.className = "purpleD";
@@ -280,16 +263,14 @@ function handleCardClick(event) {
     for (let i = 0; i < yay.length; i++){
       yay[i].className = 'purpleD';
     }
-    clicks ++;
     turn = 1;
-    document.querySelector('#clicks').innerText = clicks;
   }
 }
 
 // when the DOM loads
 document.querySelector('#start').addEventListener('click', function(){
   document.querySelector('#game').innerHTML = "";
-  let clicks = 0;
+  clicks = 0;
   document.querySelector('#clicks').innerText = clicks;
   document.querySelector('#start').innerText = "Start Again";
   createDivsForColors(shuffledColors);
